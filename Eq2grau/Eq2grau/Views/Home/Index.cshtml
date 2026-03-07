@@ -26,8 +26,19 @@
 
 @*Resposta do Controller *@
 
+
+@*Condição para esconder os campos que devolvem o resultado da calculadora, verificando se o viewbag se encontra vazio ou com conteudo*@
 <div>
-    <ul>X1 = @ViewBag.X1</ul>
-    <br>
-    <ul>X2 = @ViewBag.X2 </ul>   
+    @{
+        if (ViewBag.X1 != null)
+        {
+            <ul>X1 = @ViewBag.X1</ul>
+            <br>
+            <ul>X2 = @ViewBag.X2 </ul>
+        }
+        else
+        {
+            <ul></ul>
+        }
+    }
 </div<

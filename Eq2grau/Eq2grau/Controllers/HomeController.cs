@@ -69,7 +69,15 @@ namespace Eq2grau.Controllers
             //3.3 Caso Contrario ->>>>>>RAÍZ COMPLEXA CONJUGADA 
             else
             {
-                //3.3.1 Calcular raízes complexas   
+                //3.3.1 Calcular raízes complexas (Primeiro passo, calcular parte real)
+                float parteReal = (-b) / (2 * a);
+
+                //3.3.2 Calcular parte imaginária 
+                float parteImaginaria = (MathF.Sqrt(-delta)) / (2*a);
+
+                //3.3.3 Adicionar o i no valor
+                ViewBag.X1 = $"{parteReal} + {parteImaginaria}i";
+                ViewBag.X2 = $"{parteReal} - {parteImaginaria}i";
             }
 
 
